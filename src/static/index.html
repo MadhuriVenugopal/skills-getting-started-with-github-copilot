@@ -46,5 +46,41 @@
     </footer>
 
     <script src="app.js"></script>
+    <script>
+      function displayActivities(activities) {
+        const container = document.getElementById('activities-container');
+        container.innerHTML = '';
+        
+        Object.entries(activities).forEach(([name, details]) => {
+          const participantsList = details.participants.length > 0
+            ? details.participants.map(p => `<li>${p}</li>`).join('')
+            : '<li><em>No participants yet</em></li>';
+          
+          const availableSpots = details.max_participants - details.participants.length;
+          
+          const card = document.createElement('div');
+          card.className = 'activity-card';
+          card.innerHTML = `
+            <h4>${name}</h4>
+            <p>${details.description}</p>
+            <p><strong>Schedule:</strong> ${details.schedule}</p>
+            <p><strong>Available Spots:</strong> ${availableSpots} / ${details.max_participants}</p>
+            <div class="participants">
+              <h5>Participants (${details.participants.length})</h5>
+              <ul>
+                ${participantsList}
+              </ul>
+            </div>
+            <form onsubmit="handleSignup(event, '${name}')">
+              <div class="form-group">
+                <input type="email" placeholder="Enter your email" required>
+              </div>
+              <button type="submit" ${availableSpots === 0 ? 'disabled' : ''}>Sign Up</button>
+            </form>
+          `;
+          container.appendChild(card);
+        });
+      }
+    </script>
   </body>
 </html>
