@@ -21,40 +21,40 @@ app.mount("/static", StaticFiles(directory=os.path.join(Path(__file__).parent,
 
 # In-memory activity database
 activities = {
-    "Basketball": {
-        "description": "Team sport focusing on basketball skills and competitive games",
-        "schedule": "Mondays and Wednesdays, 4:00 PM - 5:30 PM",
+    "Basketball Team": {
+        "description": "Join the basketball team and compete in local tournaments",
+        "schedule": "Mondays and Wednesdays, 4:00 PM - 6:00 PM",
         "max_participants": 15,
         "participants": []
     },
-    "Tennis Club": {
-        "description": "Learn tennis techniques and participate in friendly matches",
-        "schedule": "Tuesdays and Thursdays, 3:30 PM - 5:00 PM",
-        "max_participants": 10,
+    "Soccer Club": {
+        "description": "Practice soccer skills and participate in matches",
+        "schedule": "Tuesdays and Thursdays, 5:00 PM - 7:00 PM",
+        "max_participants": 20,
+        "participants": []
+    },
+    "Art Club": {
+        "description": "Explore various art techniques and create projects",
+        "schedule": "Fridays, 3:00 PM - 5:00 PM",
+        "max_participants": 15,
         "participants": []
     },
     "Drama Club": {
-        "description": "Perform in theatrical productions and develop acting skills",
-        "schedule": "Wednesdays, 3:30 PM - 5:00 PM",
-        "max_participants": 25,
-        "participants": []
-    },
-    "Visual Arts": {
-        "description": "Explore painting, drawing, and sculpture techniques",
-        "schedule": "Fridays, 3:30 PM - 5:00 PM",
-        "max_participants": 18,
+        "description": "Participate in theater productions and improve acting skills",
+        "schedule": "Thursdays, 4:00 PM - 6:00 PM",
+        "max_participants": 20,
         "participants": []
     },
     "Debate Team": {
-        "description": "Develop argumentation and public speaking skills through competitive debate",
-        "schedule": "Mondays and Thursdays, 3:30 PM - 5:00 PM",
+        "description": "Engage in debates and improve public speaking skills",
+        "schedule": "Wednesdays, 3:30 PM - 5:00 PM",
         "max_participants": 12,
         "participants": []
     },
-    "Robotics Club": {
-        "description": "Design, build, and program robots for competitions",
-        "schedule": "Tuesdays and Fridays, 4:00 PM - 5:30 PM",
-        "max_participants": 16,
+    "Math Club": {
+        "description": "Solve challenging math problems and participate in competitions",
+        "schedule": "Tuesdays, 3:00 PM - 4:30 PM",
+        "max_participants": 10,
         "participants": []
     },
     "Chess Club": {
